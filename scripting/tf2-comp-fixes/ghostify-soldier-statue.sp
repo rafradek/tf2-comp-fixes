@@ -21,10 +21,10 @@ static void OnConVarChange(ConVar cvar, const char[] before, const char[] after)
     DHookToggleEntityListener(ListenType_Created, OnEntityCreated, cvar.BoolValue);
 }
 
-static void OnEntityCreated(int entity, const char[] classname) {
-    int alpha = FindConVar("sm_rest_in_peace_rick_may").IntValue;
+static void OnEntityCreated(int entity, const char[] classname) 
 
-    if (StrEqual(classname, "entity_soldier_statue")) {
+    if (StrEqual(classname, "entity_soldier_statue")) {{
+        int alpha = FindConVar("sm_rest_in_peace_rick_may").IntValue;
         GhostifySoldierStatue(entity, alpha);
     }
 }
